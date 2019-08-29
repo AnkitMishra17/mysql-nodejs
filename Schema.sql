@@ -1,0 +1,9 @@
+CREATE TABLE `opdemytask` (
+	`ID` INT(10) NOT NULL AUTO_INCREMENT,
+	`Title` varchar(40) NOT NULL DEFAULT 'NULL',
+	`Image` blob NOT NULL DEFAULT 'NULL',
+	`Price` INT(10) NOT NULL DEFAULT 'NULL',
+	`Description` varchar(500) NOT NULL DEFAULT 'NULL',
+	PRIMARY KEY (`ID`)
+);
+

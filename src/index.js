@@ -39,26 +39,12 @@ app.get('/', (req,res) =>{
         if (error){
             throw error;
         }else{
-            console.log(results);
             let outputimg = new Array();
             for(var i = 0; i< results.length;i++){
                 outputimg[i] = Buffer.from(results[i].Image).toString('base64');
             }
             const data = results;
             res.render('home',{output:data,myimg:outputimg});
-        }    
-    });
-});
-
-app.get('/getimage', (req,res) =>{
-    
-    var sql = 'SELECT Image FROM opdemytask';
-    connection.query(sql, function (error, results, fields) {
-        if (error){
-            throw error;
-        }else{
-            const outputimg = Buffer.from(results[0].Image).toString('base64');
-            res.send(outputimg);
         }    
     });
 });
