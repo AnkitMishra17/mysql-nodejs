@@ -1,0 +1,71 @@
+<%- include("partials/header.ejs") %>
+    <div class="m-5">
+            <nav class="navbar navbar-dark mb-2 d-flex flex-column justify-content-center bg-warning" style="height: 50px">
+                    <a class="navbar-brand " href="#">Best Courses Available Here</a>
+            </nav>
+        <div class="row d-flex justify-content-center">
+            <% for(var i = 0; i < output.length; i++) { %>
+                <% if( output[i].Price > 1000) { %>
+                        <div class="col-sm-5">
+                            <div class="card bg-danger text-white mb-3">
+                                <h3 class="card-header"><%= output[i].Title %></h3>
+                                <img style="height: 200px; width: auto; display: block;" src="data:image/jpeg;base64,<%= myimg[i] %>" alt="<%= output[i].Title %>">
+                                <div class="card-body">
+                                    <p class="card-text"><%= output[i].Description %></p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item text-dark"><p>Cost INR</p><h2><%= output[i].Price %></h2></li>
+                                    <li class="list-group-item"><button class="btn btn-warning">Add to Cart</button></li>
+                                </ul>
+                            </div>
+                        </div>
+               <% } } %> 
+            </div>
+    </div>
+    <div class="m-5">
+            <nav class="navbar navbar-dark mb-2 d-flex flex-column justify-content-center bg-warning" style="height: 50px">
+                    <a class="navbar-brand " href="#">Latest Courses Available</a>
+            </nav>
+            <div class="row d-flex justify-content-center">
+            <% for(var i = 0; i < output.length; i++) { %>
+                <% if( output[i].Price > 500 && output[i].Price < 1000 ) { %>
+                        <div class="col-sm-4">
+                            <div class="card bg-danger text-white mb-3" style="height: 500px">
+                                <h3 class="card-header"><%= output[i].Title %></h3>
+                                <img style="height: 200px; width: auto; display: block;" src="data:image/jpeg;base64,<%= myimg[i] %>" alt="<%= output[i].Title %>">
+                                <div class="card-body">
+                                    <p class="card-text"><%= output[i].Description %></p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item text-dark"><p>Cost INR</p><h2><%= output[i].Price %></h2></li>
+                                    <li class="list-group-item"><button class="btn btn-warning">Add to Cart</button></li>
+                                </ul>
+                            </div>
+                        </div>
+               <% } } %> 
+            </div>
+    </div>
+    <div class="m-5">
+            <nav class="navbar navbar-dark mb-2 d-flex flex-column justify-content-center bg-warning" style="height: 50px">
+                    <a class="navbar-brand " href="#">On Sale</a>
+            </nav>
+            <div class="row d-flex justify-content-center">
+            <% for(var i = 0; i < output.length; i++) { %>
+                <% if( output[i].Price <= 500) { %>
+                        <div class="col-sm-4">
+                            <div class="card bg-danger text-white mb-3" style="height: 500px">
+                                <h3 class="card-header"><%= output[i].Title %></h3>
+                                <img style="height: 200px; width: auto; display: block;" src="data:image/jpeg;base64,<%= myimg[i] %>" alt="<%= output[i].Title %>">
+                                <div class="card-body">
+                                    <p class="card-text"><%= output[i].Description %></p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item text-dark"><p>Cost INR</p><h2><%= output[i].Price %></h2></li>
+                                    <li class="list-group-item"><button class="btn btn-warning">Add to Cart</button></li>
+                                </ul>
+                            </div>
+                        </div>
+               <% } } %> 
+            </div>
+    </div>
+<%- include("partials/footer.ejs") %>
